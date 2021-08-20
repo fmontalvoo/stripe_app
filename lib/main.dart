@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:stripe_app/src/pages/home_page.dart';
+import 'package:stripe_app/src/pages/complete_payment_page.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -9,10 +12,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Stripe App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      initialRoute: 'home',
+      routes: {
+        'home': (context) => HomePage(),
+        'complete_payment': (context) => CompletePaymentPage(),
+      },
+      theme: ThemeData.light().copyWith(
+          primaryColor: const Color(0xFF284879),
+          scaffoldBackgroundColor: const Color(0xFF21232A)),
     );
   }
 }
