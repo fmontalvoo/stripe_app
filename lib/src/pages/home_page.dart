@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
+
+import 'package:stripe_app/src/bloc/pay/pay_bloc.dart';
 
 import 'package:stripe_app/src/data/cards.dart';
 import 'package:stripe_app/src/helpers/helpers.dart';
@@ -46,6 +49,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   onTap: () {
+                    context.read<PayBloc>().add(OnSelectCard(card));
                     Navigator.push(
                       context,
                       navigateFadeIn(

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_credit_card/credit_card_widget.dart';
+
+import 'package:stripe_app/src/bloc/pay/pay_bloc.dart';
 
 import 'package:stripe_app/src/models/credit_card_custom_model.dart';
 
@@ -13,7 +16,14 @@ class CardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        leading: BackButton(
+          onPressed: () {
+            context.read<PayBloc>().add(OnDeselectCard());
+            Navigator.maybePop(context);
+          },
+        ),
+      ),
       body: Stack(
         children: [
           Container(),
