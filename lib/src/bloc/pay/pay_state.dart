@@ -1,10 +1,10 @@
 part of 'pay_bloc.dart';
 
-@immutable
-abstract class PayState {}
+// @immutable
+// abstract class PayState {}
 
-class PaymenState extends PayState {
-  PaymenState({
+class PayState {
+  PayState({
     this.total = 0.0,
     this.currency = 'USD',
     this.activeCard = false,
@@ -15,13 +15,15 @@ class PaymenState extends PayState {
   final bool activeCard;
   final CreditCardCustomModel card;
 
-  PaymenState copyWith({
+  String get amout => total.toStringAsFixed(2);
+
+  PayState copyWith({
     double total,
     String currency,
     bool activeCard,
     CreditCardCustomModel card,
   }) =>
-      PaymenState(
+      PayState(
         total: total ?? this.total,
         currency: currency ?? this.currency,
         activeCard: activeCard ?? this.activeCard,

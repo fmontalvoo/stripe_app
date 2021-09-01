@@ -7,19 +7,19 @@ final cards = <CreditCardCustomModel>[
       brand: 'visa',
       cvv: '213',
       expiracyDate: '01/25',
-      cardHolderName: 'Fernando Herrera'),
+      cardHolderName: 'Frank Montalvo'),
   CreditCardCustomModel(
       cardNumberHidden: '5555',
       cardNumber: '5555555555554444',
       brand: 'mastercard',
       cvv: '213',
       expiracyDate: '01/25',
-      cardHolderName: 'Melissa Flores'),
+      cardHolderName: 'Alan Brito'),
   CreditCardCustomModel(
       cardNumberHidden: '3782',
       cardNumber: '378282246310005',
       brand: 'american express',
       cvv: '2134',
       expiracyDate: '01/25',
-      cardHolderName: 'Eduardo Rios'),
+      cardHolderName: 'Aquiles Castro'),
 ];

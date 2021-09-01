@@ -7,6 +7,8 @@ import 'package:stripe_app/src/bloc/pay/pay_bloc.dart';
 import 'package:stripe_app/src/pages/home_page.dart';
 import 'package:stripe_app/src/pages/complete_payment_page.dart';
 
+import 'package:stripe_app/src/services/stripe_service.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -14,6 +16,8 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    StripeService();
+
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => PayBloc()),

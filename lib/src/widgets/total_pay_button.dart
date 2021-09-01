@@ -43,7 +43,7 @@ class TotalPayButton extends StatelessWidget {
           ),
           BlocBuilder<PayBloc, PayState>(
             builder: (context, state) => _BtnPay(
-              cardActive: (state as PaymenState).activeCard,
+              cardActive: state.activeCard,
             ),
           )
         ],
